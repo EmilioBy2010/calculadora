@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en"> <!-- Definimos el idioma principal de la página como inglés -->
+<head>
+  <meta charset="UTF-8"> <!-- Configuración del juego de caracteres para admitir caracteres especiales como tildes y ñ -->
+  
+  <!-- Configuración para que la página sea responsiva en dispositivos móviles -->
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Enlace al archivo CSS de estilos, utilizando Jinja para generar la URL correctamente -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+  <title>Calculadora de eficiencia energética para hogares inteligentes</title> <!-- Título de la página -->
+</head>
+<body>
+
+  <!-- Sección del encabezado de la página -->
+  <header class="header">
+    <div class="header__text">
+      <h1>Calcule la eficiencia energética de su hogar</h1> <!-- Título principal -->
+      <p>Tome la iniciativa y resuelva el problema del consumo excesivo de energía</p> <!-- Subtítulo motivador -->
+    </div>
+  </header>
+
+  <!-- Contenido principal de la página -->
+  <main>
+    <h2 class="main__title">Especifique el número de dispositivos que utilizan electricidad:</h2> <!-- Título de la sección -->
+
+    <ul class="list" id="list">  
+      <!-- 🔹 Lista de opciones para seleccionar la cantidad de dispositivos eléctricos -->
+
+      <!-- Opción 1: Si el usuario elige entre 3 y 5 dispositivos -->
+      <li class="list__item">
+        <a href="{{ url_for('end', size=size, lights=lights, device=5) }}"> 
+        <!-- 🔹 Se usa `url_for` para generar la URL de la página final con los parámetros adecuados -->
+          <img class="item__img" src="../static/img/battery.svg" alt="battery"> 
+          <!-- Imagen representando dispositivos eléctricos -->
+          <span>3-5 aparatos</span>
+        </a>
+      </li>
+
+      <!-- Opción 2: Si el usuario elige entre 6 y 8 dispositivos -->
+      <li class="list__item">
+        <a href="{{ url_for('end', size=size, lights=lights, device=7) }}">
+          <img class="item__img" src="../static/img/battery.svg" alt="battery">
+          <span>6-8 aparatos</span>
+        </a>
+      </li>
+
+      <!-- Opción 3: Si el usuario elige 10 o más dispositivos -->
+      <li class="list__item">
+        <a href="{{ url_for('end', size=size, lights=lights, device=10) }}">
+          <img class="item__img" src="../static/img/battery.svg" alt="battery">
+          <span>10+ aparatos</span>
+        </a>
+      </li>
+    </ul>
+  </main>
+
+  <!-- Pie de página (vacío por ahora, pero se puede completar en el futuro) -->
+  <footer>
+  </footer>
+
+</body>
+</html>
