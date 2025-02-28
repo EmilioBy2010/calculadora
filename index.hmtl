@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en"> <!-- Definimos el tipo de documento y el idioma principal de la página -->
+<head>
+  <meta charset="UTF-8">
+  <!-- Configuración para que la página sea responsiva en dispositivos móviles -->
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Enlace al archivo de estilos ubicado en la carpeta 'static/css/style.css' -->
+  <link rel="stylesheet" href="../static/css/style.css">
+  
+  <!-- Título que aparecerá en la pestaña del navegador -->
+  <title>Calculadora de eficiencia energética para hogares inteligentes</title>
+</head>
+<body>
+
+  <!-- Sección del encabezado de la página -->
+  <header class="header">
+    <div class="header__text">
+      <h1>Calcule la eficiencia energética de su hogar</h1> <!-- Título principal -->
+      <p>Tome la iniciativa y resuelva el problema del consumo excesivo de energía</p> <!-- Subtítulo motivador -->
+    </div>
+  </header>
+
+  <!-- Contenido principal de la página -->
+  <main>
+    {% block content %}  
+    <!-- 🔹 Bloque de contenido dinámico: Esto significa que otras plantillas pueden cambiar esta parte -->
+    
+    <h2 class="main__title">Selecciona el tamaño de tu hogar:</h2> <!-- Pregunta para el usuario -->
+
+    <!-- Lista de opciones para que el usuario seleccione el tamaño de su hogar -->
+    <ul class="list">
+      
+      <!-- 🔹 Opción 1: Hogar pequeño -->
+      <li class="list__item">
+        <a href="/1">  <!-- Enlace que dirige a la URL "/1" en Flask -->
+          <img class="item__img" src="../static/img/home.svg" alt="home"> <!-- Imagen representando una casa -->
+          <span>Un hogar pequeño</span> <!-- Texto descriptivo -->
+        </a>
+      </li>
+
+      <!-- 🔹 Opción 2: Hogar mediano -->
+      <li class="list__item">
+        <a href="/2">  <!-- Enlace que dirige a la URL "/2" en Flask -->
+          <img class="item__img" src="../static/img/home.svg" alt="home"> <!-- Imagen de una casa -->
+          <span>Un hogar mediano</span> <!-- Texto descriptivo -->
+        </a>
+      </li>
+
+      <!-- 🔹 Opción 3: Hogar grande -->
+      <li class="list__item">
+        <a href="/3">  <!-- Enlace que dirige a la URL "/3" en Flask -->
+          <img class="item__img" src="../static/img/home.svg" alt="home"> <!-- Imagen de una casa -->
+          <span>Un hogar grande</span> <!-- Texto descriptivo -->
+        </a>
+      </li>
+
+    </ul>
+
+    {% endblock %} 
+    <!-- 🔹 Fin del bloque dinámico. Otras plantillas pueden modificar su contenido si lo heredan. -->
+
+  </main>
+
+  <!-- Pie de página (actualmente vacío, pero se puede modificar en futuras versiones) -->
+  <footer>
+  </footer>
+
+</body>
+</html>
