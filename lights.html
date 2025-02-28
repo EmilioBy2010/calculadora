@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en"> <!-- Define el idioma de la página como inglés -->
+<head>
+  <meta charset="UTF-8"> <!-- Permite caracteres especiales como tildes y ñ -->
+  
+  <!-- Configuración para que la página sea responsiva en dispositivos móviles -->
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Enlace a la hoja de estilos CSS para mejorar la apariencia de la página -->
+  <link rel="stylesheet" href="../static/css/style.css">
+  
+  <title>Calculadora de eficiencia energética para hogares inteligentes</title> <!-- Título de la página -->
+</head>
+<body>
+
+  <!-- Encabezado de la página -->
+  <header class="header">
+    <div class="header__text">
+      <h1>Calcule la eficiencia energética de su hogar</h1> <!-- Título principal -->
+      <p>Tome la iniciativa y resuelva el problema del consumo excesivo de energía.</p> <!-- Mensaje motivador -->
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main>
+    <h2 class="main__title">Seleccione cuántas lámparas hay en su hogar:</h2> <!-- Título de la sección -->
+
+    <ul class="list" id="list">  
+      <!-- 🔹 Lista de opciones para seleccionar la cantidad de lámparas -->
+
+      <!-- Opción 1: 2-4 lámparas -->
+      <li class="list__item">
+        <a href="{{ size }}/4">  
+        <!-- 🔹 `size` es un valor dinámico pasado desde Flask, se concatena en la URL -->
+          <img class="item__img" src="../static/img/light.svg" alt="light"> 
+          <!-- Imagen de una lámpara -->
+          <span>2-4 lámparas</span>
+        </a>
+      </li>
+
+      <!-- Opción 2: 4-6 lámparas -->
+      <li class="list__item">
+        <a href="{{ size }}/7">
+          <img class="item__img" src="../static/img/light.svg" alt="light">
+          <span>4-6 lámparas</span>
+        </a>
+      </li>
+
+      <!-- Opción 3: 8 o más lámparas -->
+      <li class="list__item">
+        <a href="{{ size }}/10">
+          <img class="item__img" src="../static/img/light.svg" alt="light">
+          <span>8+ lámparas</span>
+        </a>
+      </li>
+    </ul>
+  </main>
+
+  <!-- Pie de página (vacío por ahora, pero útil para añadir información en el futuro) -->
+  <footer>
+  </footer>
+
+</body>
+</html>
